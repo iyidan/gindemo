@@ -1,0 +1,26 @@
+{
+    // api server listen address
+    "addr":":8081",
+    // max body bytes: 40 << 20(40mb)
+    "maxBodySize": 41943040,
+    
+    // whether open pprof
+    "pprof":true,
+    "pprofAddr":":6060",
+
+    // mysql dsn
+    // [username[:password]@][protocol[(address)]]/dbname[?param1=value1&...&paramN=valueN]
+    "mysql":"liw:123456@tcp(local-02:3306)/gindemo?readTimeout=30s&writeTimeout=30s&timeout=10s&parseTime=True&charset=utf8&loc=Asia%2FShanghai&interpolateParams=true",
+
+    "redis":"",
+
+    "logdir":"./runtime/logs",
+
+    // client app signature list
+    "client.appList": {
+        "app1_ak":"bf69c58af0055390f5c3d048e5b98ddb"
+    },
+
+    // place holder
+    "xxxUnusedPlaceholder":0
+}

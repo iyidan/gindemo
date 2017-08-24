@@ -1,0 +1,123 @@
+{
+	"comment": "",
+	"ignore": "test",
+	"package": [
+		{
+			"path": "-v",
+			"revision": ""
+		},
+		{
+			"checksumSHA1": "QeKwBtN2df+j+4stw3bQJ6yO4EY=",
+			"path": "github.com/gin-contrib/sse",
+			"revision": "22d885f9ecc78bf4ee5d72b937e4bbcdc58e8cae",
+			"revisionTime": "2017-01-09T09:34:21Z"
+		},
+		{
+			"checksumSHA1": "cpELhz30Sco7IBwvI6FyuShnjnQ=",
+			"path": "github.com/gin-gonic/gin",
+			"revision": "d459835d2b077e44f7c9b453505ee29881d5d12d",
+			"revisionTime": "2017-07-02T09:28:26Z",
+			"version": "v1.2",
+			"versionExact": "v1.2"
+		},
+		{
+			"checksumSHA1": "YVt5lqmGq95m5tFdiz5pr2BF1Jo=",
+			"path": "github.com/gin-gonic/gin/binding",
+			"revision": "d459835d2b077e44f7c9b453505ee29881d5d12d",
+			"revisionTime": "2017-07-02T09:28:26Z",
+			"version": "v1.2",
+			"versionExact": "v1.2"
+		},
+		{
+			"checksumSHA1": "M3FwiqpVbXwo9t2FyI5/gKxCDKY=",
+			"path": "github.com/gin-gonic/gin/render",
+			"revision": "d459835d2b077e44f7c9b453505ee29881d5d12d",
+			"revisionTime": "2017-07-02T09:28:26Z",
+			"version": "v1.2",
+			"versionExact": "v1.2"
+		},
+		{
+			"path": "github.com/golang/protobuf/proto",
+			"revision": ""
+		},
+		{
+			"checksumSHA1": "J3Xp3slI4UAqbhOfk02vopnfGJg=",
+			"path": "github.com/iyidan/goutils/cmtjson",
+			"revision": "828f1a6ee909132226081b0187787f76fe7f3231",
+			"revisionTime": "2017-07-15T10:18:01Z",
+			"version": "v0.0.6",
+			"versionExact": "v0.0.6"
+		},
+		{
+			"checksumSHA1": "Q76yvaJ0PIdHF2/Ysw7qqYmXzws=",
+			"path": "github.com/iyidan/goutils/config",
+			"revision": "828f1a6ee909132226081b0187787f76fe7f3231",
+			"revisionTime": "2017-07-15T10:18:01Z",
+			"version": "v0.0.6",
+			"versionExact": "v0.0.6"
+		},
+		{
+			"checksumSHA1": "/WK37kMdrH4nZvPDurDmOguiork=",
+			"path": "github.com/iyidan/goutils/mise",
+			"revision": "828f1a6ee909132226081b0187787f76fe7f3231",
+			"revisionTime": "2017-07-15T10:18:01Z",
+			"version": "v0.0.6",
+			"versionExact": "v0.0.6"
+		},
+		{
+			"checksumSHA1": "iCh62rwjlDjBeysu0t5J84jbilU=",
+			"path": "github.com/iyidan/goutils/safemap",
+			"revision": "828f1a6ee909132226081b0187787f76fe7f3231",
+			"revisionTime": "2017-07-15T10:18:01Z",
+			"version": "v0.0.6",
+			"versionExact": "v0.0.6"
+		},
+		{
+			"checksumSHA1": "Tu8OFFWOWR+/XAa9/rDcUCbd5VA=",
+			"path": "github.com/iyidan/log",
+			"revision": "c538c05d3f3c6267d3eaad56191219698735bb66",
+			"revisionTime": "2017-07-12T09:32:06Z",
+			"version": "v0.0.1",
+			"versionExact": "v0.0.1"
+		},
+		{
+			"checksumSHA1": "pb58snKrzV7htZulGDJUZBeHilI=",
+			"path": "github.com/jinzhu/gorm",
+			"revision": "5174cc5c242a728b435ea2be8a2f7f998e15429b",
+			"revisionTime": "2016-04-04T14:49:18Z",
+			"version": "v1.0",
+			"versionExact": "v1.0"
+		},
+		{
+			"checksumSHA1": "VIp1lZm6joWhlNdwhady8u//qRw=",
+			"path": "github.com/jinzhu/inflection",
+			"revision": "1c35d901db3da928c72a72d8458480cc9ade058f",
+			"revisionTime": "2017-01-02T12:52:26Z"
+		},
+		{
+			"checksumSHA1": "U6lX43KDDlNOn+Z0Yyww+ZzHfFo=",
+			"path": "github.com/mattn/go-isatty",
+			"revision": "fc9e8d8ef48496124e79ae0df75490096eccf6fe",
+			"revisionTime": "2017-03-22T23:44:13Z"
+		},
+		{
+			"checksumSHA1": "9Zw986fuQM/hCoVd8vmHoSM+8sU=",
+			"path": "github.com/ugorji/go/codec",
+			"revision": "5efa3251c7f7d05e5d9704a69a984ec9f1386a40",
+			"revisionTime": "2017-06-20T10:48:52Z"
+		},
+		{
+			"path": "golang.org/x/sys/unix",
+			"revision": ""
+		},
+		{
+			"path": "gopkg.in/go-playground/validator.v8",
+			"revision": ""
+		},
+		{
+			"path": "gopkg.in/yaml.v2",
+			"revision": ""
+		}
+	],
+	"rootPath": "github.com/iyidan/gindemo"
+}
