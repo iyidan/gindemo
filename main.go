@@ -95,7 +95,7 @@ func initServer() (*http.Server, chan<- struct{}, <-chan error) {
 		MaxHeaderBytes: 1 << 20, // 1MB
 	}
 	// dev connState debug
-	if conf.IsOnDev() {
+	if conf.Bool("debugConnState") {
 		s.ConnState = func(conn net.Conn, state http.ConnState) {
 			log.Infof("%s -> %s", conn.RemoteAddr().String(), state.String())
 		}

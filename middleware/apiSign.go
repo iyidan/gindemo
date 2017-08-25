@@ -1,6 +1,8 @@
 package middleware
 
 import (
+	"bytes"
+	"io/ioutil"
 	"mime"
 	"net/http"
 	"strings"
@@ -24,7 +26,7 @@ func APISign() gin.HandlerFunc {
 			return
 		}
 
-		errno, errmsg := SignV2(maxBodySize, c)
+		errno, errmsg := SignRequest(maxBodySize, c)
 		if errno != util.ErrnoSuccess {
 			util.APIResp(c, nil, errno, errmsg, http.StatusOK)
 			c.Abort()
@@ -35,8 +37,8 @@ func APISign() gin.HandlerFunc {
 	}
 }
 
-// SignV2 api signature v2
-func SignV2(maxBodySize int64, c *gin.Context) (errno util.Errno, errmsg string) {
+// SignRequest api request check signature
+func SignRequest(maxBodySize int64, c *gin.Context) (errno util.Errno, errmsg string) {
 	datehdr := c.GetHeader("Date")
 	if len(datehdr) == 0 {
 		return util.ErrnoSign, "sign-header: Date empty"
@@ -96,11 +98,14 @@ func SignV2(maxBodySize int64, c *gin.Context) (errno util.Errno, errmsg string)
 		if err != nil {
 			return util.ErrnoSystem, "read body error:" + err.Error()
 		}
+		// reset body
+		c.Request.Body.Close()
+		c.Request.Body = ioutil.NopCloser(bytes.NewReader(rawBody))
 	}
 
-	genSign := util.GenSignV2(sk, c.Request.Method, c.Request.URL.Path, datehdr, values, rawBody)
+	genSign := util.GenSign(sk, c.Request.Method, c.Request.URL.Path, datehdr, values, rawBody)
 	if genSign != auths[1] {
-		log.Errorf("sign_v2_error: sk=%s,method=%s,path=%s,datehdr=%s,authhdr=%s,params=%#v,body=%s,genSign=%s",
+		log.Errorf("sign_request_error: sk=%s,method=%s,path=%s,datehdr=%s,authhdr=%s,params=%#v,body=%s,genSign=%s",
 			sk, c.Request.Method, c.Request.URL.Path, datehdr, authhdr, values, rawBody, genSign)
 		return util.ErrnoSign, "sign error"
 	}

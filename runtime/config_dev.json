@@ -7,6 +7,8 @@
     // whether open pprof
     "pprof":true,
     "pprofAddr":":6060",
+    // whether debug http.Conn state
+    "debugConnState":false, 
 
     // mysql dsn
     // [username[:password]@][protocol[(address)]]/dbname[?param1=value1&...&paramN=valueN]

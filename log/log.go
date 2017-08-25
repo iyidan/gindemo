@@ -9,7 +9,9 @@ import (
 	"github.com/iyidan/gindemo/conf"
 )
 
-var logger = log.New()
+var (
+	DefaultLogger = log.New()
+)
 
 // Startup log
 // wrap the log package
@@ -19,70 +21,70 @@ func Startup() {
 		appName = "app"
 	}
 	logfile := filepath.Join(conf.String("logdir"), appName+".log")
-	err := logger.SetOutputByName(logfile)
+	err := DefaultLogger.SetOutputByName(logfile)
 	if err != nil {
 		mise.PanicOnError(err, "log.Startup")
 	}
-	logger.SetRotateByDay()
-	logger.SetFlags(log.Ldate | log.Ltime | log.Lshortfile)
+	DefaultLogger.SetRotateByDay()
+	DefaultLogger.SetFlags(log.Ldate | log.Ltime | log.Lshortfile)
 }
 
 func Println(v ...interface{}) {
-	logger.Info(v...)
+	DefaultLogger.Info(v...)
 }
 
 func Printf(format string, v ...interface{}) {
-	logger.Infof(format, v...)
+	DefaultLogger.Infof(format, v...)
 }
 
 func Info(v ...interface{}) {
-	logger.Info(v...)
+	DefaultLogger.Info(v...)
 }
 
 func Infof(format string, v ...interface{}) {
-	logger.Infof(format, v...)
+	DefaultLogger.Infof(format, v...)
 }
 
 func Debug(v ...interface{}) {
-	logger.Debug(v...)
+	DefaultLogger.Debug(v...)
 }
 
 func Debugf(format string, v ...interface{}) {
-	logger.Debugf(format, v...)
+	DefaultLogger.Debugf(format, v...)
 }
 
 func Warn(v ...interface{}) {
-	logger.Warning(v...)
+	DefaultLogger.Warning(v...)
 }
 
 func Warnf(format string, v ...interface{}) {
-	logger.Warningf(format, v...)
+	DefaultLogger.Warningf(format, v...)
 }
 
 func Warning(v ...interface{}) {
-	logger.Warning(v...)
+	DefaultLogger.Warning(v...)
 }
 
 func Warningf(format string, v ...interface{}) {
-	logger.Warningf(format, v...)
+	DefaultLogger.Warningf(format, v...)
 }
 
 func Error(v ...interface{}) {
-	logger.Error(v...)
+	DefaultLogger.Error(v...)
 }
 
 func Errorf(format string, v ...interface{}) {
-	logger.Errorf(format, v...)
+	DefaultLogger.Errorf(format, v...)
 }
 
 func Fatal(v ...interface{}) {
-	logger.Fatal(v...)
+	DefaultLogger.Fatal(v...)
 }
 
 func Fatalf(format string, v ...interface{}) {
-	logger.Fatalf(format, v...)
+	DefaultLogger.Fatalf(format, v...)
 }
 
 func SetLevelByString(level string) {
-	logger.SetLevelByString(level)
+	DefaultLogger.SetLevelByString(level)
 }

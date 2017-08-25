@@ -57,6 +57,26 @@ func APISucc(c *gin.Context, data interface{}) {
 	APIResp(c, data, ErrnoSuccess, "success", http.StatusOK)
 }
 
+// APIParamError a ErrnoParam api reponse
+func APIParamError(c *gin.Context, errmsg string) {
+	APIResp(c, nil, ErrnoParam, errmsg, http.StatusOK)
+}
+
+// APISystemError a ErrnoSystem api reponse
+func APISystemError(c *gin.Context, errmsg string) {
+	APIResp(c, nil, ErrnoSystem, errmsg, http.StatusInternalServerError)
+}
+
+// APIUserError a ErrnoUser api reponse
+func APIUserError(c *gin.Context, errmsg string) {
+	APIResp(c, nil, ErrnoUser, errmsg, http.StatusOK)
+}
+
+// APIStatusOk a statusok api reponse
+func APIStatusOk(c *gin.Context, data interface{}, errno Errno, errmsg string) {
+	APIResp(c, data, errno, errmsg, http.StatusOK)
+}
+
 // APIResp a api response
 func APIResp(c *gin.Context, data interface{}, errno Errno, errmsg string, httpCode int) {
 	//ret := &APIRespData{Errno: errno, Errmsg: errmsg, Data: data}
@@ -73,8 +93,8 @@ func APIResp(c *gin.Context, data interface{}, errno Errno, errmsg string, httpC
 	apiDataPool.Put(ret)
 }
 
-// GenSignV2 sign v2 implement
-func GenSignV2(sk, method, path, date string, params map[string][]string, body []byte) string {
+// GenSign sign implement
+func GenSign(sk, method, path, date string, params map[string][]string, body []byte) string {
 	p := GenSignParams(params, false)
 	paramString := strings.Join(p, "&")
 	bodyMD5 := ""
